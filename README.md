@@ -4,75 +4,45 @@
 
 # Tema da Aula
 
-Turma Online X - Todas em Tech  | X-end | Semana X | 2022 | Professora X
+Turma Online 18 - Todas em Tech  | Back-end | Semana 8 | 2022 | Professora Analu ✍(◔◡◔)
 
 ### Instruções
 Antes de começar, vamos organizar nosso setup.
 * Fork esse repositório 
 * Clone o fork na sua máquina (Para isso basta abrir o seu terminal e digitar `git clone url-do-seu-repositorio-forkado`)
 * Entre na pasta do seu repositório (Para isso basta abrir o seu terminal e digitar `cd nome-do-seu-repositorio-forkado`)
-* [Add outras intrucoes caso necessario]
+* Crie uma branch com seu nome (Para isso, basta abrir o seu terminal estando dentro do seu repositório e digitar `git checkout -b SEU-NOME-SOBRENOME`)
+
+### Objetivo
+Criar nossas primeiras APIs, disponibilizando rotas de leitura e criação 
 
 ### Resumo
-O que veremos na aula de hoje?
-* [Tema1](#tema1)
-* [Tema2](#tema2)
-* [Tema3](#tema3)
+- [Tema da Aula](#tema-da-aula)
+    - [Instruções](#instruções)
+    - [Objetivo](#objetivo)
+    - [Resumo](#resumo)
 
-## Conteúdo
-### Tema1 
-1. [Tópico 1](#topico1)
-2. [Tópico 2](#topico2)
-### Tema2 
-1. [Tópico 3](#topico3)
-   * [Subtópico 1](#subtopico1)
-   * [Subtópico 2](#subtopico2)
-   
-### Tema3
-1. [Tópico 4](#topico4)
+- [Conteúdo](#conteúdo)
 
-### Tema1 
-
-#### Topico1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel, eleifend suscipit nibh. Mauris pharetra dui quis turpis rutrum blandit. Nunc tempor libero tortor, ac commodo erat porttitor ut. Donec vitae orci arcu. Nunc felis mi, maximus a turpis a, mollis pulvinar enim. Vivamus aliquam ante dui, a blandit massa rutrum et. Etiam hendrerit gravida ultrices. Nunc ante massa, dictum eget justo eget, feugiat tincidunt metus.
-
- #### Topico2
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  - Donec erat mauris, laoreet in tortor vel
-  - Nunc ante massa, dictum eget justo eget, feugiat tincidunt.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel, eleifend suscipit nibh. Mauris pharetra dui quis turpis rutrum blandit.
-
-### Tema2
-#### Topico3
-* [Subtópico 1](#subtopico1)
-* [Subtópico 2](#Subtopico2)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel.
-
-##### Subtopico1
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel.
-
-##### Subtopico2
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel.
-
-### Tema3
-#### Topico4
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel, eleifend suscipit nibh. Mauris pharetra dui quis turpis rutrum blandit. Nunc tempor libero tortor, ac commodo erat porttitor ut. Donec vitae orci arcu. Nunc felis mi, maximus a turpis a, mollis pulvinar enim. Vivamus aliquam ante dui, a blandit massa rutrum et. Etiam hendrerit gravida ultrices.
+  - [Exercícios](#exercícios)
+  - [Material da aula](#material-da-aula)
+  - [Links Úteis](#links-úteis)
 
 ***
 ### Exercícios 
-* [Exercicio para sala](https://github.com/mflilian/repo-example/tree/main/exercicios/para-sala)
-* [Exercicio para casa](https://github.com/mflilian/repo-example/tree/main/exercicios/para-casa)
+* [Exercicio para sala](/exercicios/para-sala/)
+* [Exercicio para casa](/exercicios/para-casa/)
 
 ### Material da aula 
+* [Material](/material)
 
 ### Links Úteis
-- [Lorem Ipsum](https://www.lipsum.com/feed/html)
-- [Lorem Ipsum](https://www.lipsum.com/feed/html)
-- [Lorem Ipsum](https://www.lipsum.com/feed/html)
-- [Lorem Ipsum](https://www.lipsum.com/feed/html)
+- 
 
+Escrito por: Ana Luiza Sampaio para {Reprograma}
+
+Me encontre no instagram: [@analu.io](https://www.instagram.com/analu.io)
+ou me mande um e-mail: sampaioaanaluiza@gmail.com
 
 <p align="center">
 Desenvolvido com :purple_heart:  
