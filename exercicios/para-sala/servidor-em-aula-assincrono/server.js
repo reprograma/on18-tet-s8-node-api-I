@@ -1,6 +1,12 @@
+//simulação do banco de dados
+
 function bancoDeDados(){
     return new Promise((resolve)=>{
-
+        setTimeout(()=>{
+            return resolve ({
+                filmes: require("./data/ghibli.json")
+            })
+        }, 1500);
     })
 }
 
@@ -11,7 +17,11 @@ const app = express()
 
 app.use(express.json())
 
-app.get("")
+app.get("/filmes", async (request, response)=>{
+    let dbFilmes = await bancoDeDados()
+
+    response.status(200).send(dbFilmes.filmes)
+})
 
 
 app.listen(1313, ()=>{
