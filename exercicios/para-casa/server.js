@@ -122,5 +122,3 @@ app.get("/filmes/pesquisar",async (request,response) => {
 app.listen(5055, () => {
     console.log("Tudo ok e rodando")
 })
-  
-  
