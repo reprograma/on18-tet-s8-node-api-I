@@ -2,9 +2,11 @@
 
 ## Reprogramaflix
 
-- Explicação do projeto: para os dois jsons (filmes e series) crie as rotas de retorno de todos os filmes, por id, por titulo e por qualquer chave/valor. Crie a rota de criação de filme e serie.
+- Explicação do projeto: para os dois jsons (filmes e series) crie as rotas de retorno de todos os filmes e de todas as series, por id, por titulo e por qualquer chave/valor. Crie a rota de criação de filme e serie.
 
 - Documente sua API
+
+- DESAFIO: encontre e construa casos de erro
 ---
 
 Terminou o projetinho? Dá uma olhada nessa checklist e confere se tá tudo certinho, combinado?!
