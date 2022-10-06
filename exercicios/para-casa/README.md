@@ -4,6 +4,8 @@
 
 - Explicação do projeto: para os dois jsons (filmes e series) crie as rotas de retorno de todos os filmes, por id, por titulo e por qualquer chave/valor. Crie a rota de criação de filme e serie.
 
+DESAFIO: encontre caso de erro
+
 - Documente sua API
 ---
 
