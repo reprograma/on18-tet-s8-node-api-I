@@ -1,0 +1,15 @@
+{
+  "name": "meu-primeiro-servidor",
+  "version": "1.0.0",
+  "description": "me\u001buu prime\u001bi\u001briro se\u001br\u001bvvidor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Alane",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
