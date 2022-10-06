@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "Title":"10 Things I Hate About You",
+        "title":"10 Things I Hate About You",
         "Year":"1999",
         "Rated":"PG-13",
         "Released":"31 Mar 1999",
@@ -17,7 +17,7 @@
     },
     {
         "id":2,
-        "Title": "Avatar",
+        "title": "Avatar",
         "Year": "2009",
         "Rated": "PG-13",
         "Released": "18 Dec 2009",
@@ -33,7 +33,7 @@
     },
     {
         "id":3,
-        "Title":"Inception",
+        "title":"Inception",
         "Year":"2010",
         "Rated":"PG-13",
         "Released":"16 Jul 2010",
@@ -65,7 +65,7 @@
     },
     {
         "id":5,
-        "Title":"The Truman Show",
+        "title":"The Truman Show",
         "Year":"1998",
         "Rated":"PG",
         "Released":"05 Jun 1998",
