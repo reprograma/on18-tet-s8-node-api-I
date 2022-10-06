@@ -1,7 +1,21 @@
 # Exercício de Sala 🏫  
 
 ---
+*criar pasta do servidor
+*criar arquivo server.js
+*começa o servidor (`npm init -y`)
+*baixar dependencias 
+        *Express (`npm i express`)
+        *Nodemon (`npm i nodemon`)
+            adicionar no package.json
+                mudar "start": "node server.js"
+                para "start": "nodemon server.js"
+*ignora a node_modules: criar arquivo .gitignore e colocar a node modules la dentro  (`touch .gitignore`)
+    *baixar dependencias de um projeto iniciado (`npm i`)
+*No service: invocar o express e configurar nossa porta do servidor
+*criar as rotas
 
+---
 Terminou o exercício? Dá uma olhada nessa checklist e confere se tá tudo certinho, combinado?!
 
 - [ ] Fiz o fork do repositório.
