@@ -42,7 +42,7 @@ app.get("/filmes/pesquisar/:id", async (request, response)=> {
     }
 })
 
-app.get("filmes/pesquisar", async (request, response)=>{
+app.get("/filmes/pesquisar", async (request, response)=>{
     try{
         let dbFilmes = await bancoDeDados()
         let tituloRequest = request.query.titulo.toLowerCase()
