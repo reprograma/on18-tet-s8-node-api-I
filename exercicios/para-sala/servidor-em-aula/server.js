@@ -28,9 +28,7 @@ app.get("/filmes/pesquisar", (request, response)=>{
 
     let filmeEncontrado = filmesJson.filter(
         filme => filme.title.toLowerCase().includes(tituloRequest))
-
     response.status(200).send(filmeEncontrado)
-
     })
     
 app.post("/filmes/cadastrar", (request, response)=>{

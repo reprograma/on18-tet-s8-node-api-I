@@ -23,6 +23,8 @@ app.get("/filmes", async (request, response)=>{
     response.status(200).send(dbFilmes.filmes)
 })
 
+app.get("/")
+
 app.listen(1313, ()=>{
     console.log("Tomem cuidado nas votações")
 })
