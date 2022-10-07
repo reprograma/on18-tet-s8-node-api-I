@@ -16,7 +16,7 @@ API Feita com Express JS para simular a busca de dados de um arquivo json com as
 
 ### Prerrequisitos
 
-Git
+Git,
 Node & NPM
 
 ### Installing
