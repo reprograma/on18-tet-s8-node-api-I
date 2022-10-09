@@ -13,6 +13,7 @@
     * Retorna erro 404 com a mensagem: "filme não encontrado" caso o cliente digitar nome errado
 - [GET] "filmes/pesquisar/:chave/valor"
     * Retorna filme por chave/valor
+    * Retorna erro 404 com a mensagem: "filme não encontrado" caso o cliente digitar nome errado
 - [POST] "/filmes/cadastrar"
     * Cadastra um novo filme 
 
@@ -23,7 +24,8 @@
 - [GET] "series/pesquisar/:titulo"
     * Retorna serie por título
     * Retorna erro 404 com a mensagem: "serie não encontrada" caso o cliente digitar nome errado
-- [GET] "series/pesquisar/:chave/valor"
+- [GET] "series/buscar/:chave/valor"
     * Retorna serie por chave/valor
+    * Retorna erro 404 com a mensagem: "serie não encontrada" caso o cliente digitar nome errado
 - [POST] "/series/cadastrar"
     * Cadastra um novo filme 

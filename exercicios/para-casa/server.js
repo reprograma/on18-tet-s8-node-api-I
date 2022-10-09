@@ -30,7 +30,7 @@ app.get("/filmes/pesquisar/:id", async (request, response) => {
         let pesquisarId = dbFilmes.filmes.find((filme) => filme.id == idRequest)
         console.log(pesquisarId)
 
-        if(pesquisarId == undefined) throw new Error("id não encontrado")
+        if(pesquisarId == undefined) throw new Error("id do filme não encontrado")
 
         response.status(200).send(pesquisarId)
 
@@ -47,7 +47,7 @@ app.get("/filmes/pesquisar", async (request, response) => {
         
         let pesquisarTitulo = dbFilmes.filmes.filter((filme) => filme.Title.toLowerCase().includes(tituloRequest))
 
-        if(pesquisarTitulo.length == 0) throw new Error("filme não encontrado")
+        if(pesquisarTitulo.length == 0) throw new Error("Filme não encontrado")
 
         response.status(200).send(pesquisarTitulo)
     } catch (error) {
@@ -57,36 +57,33 @@ app.get("/filmes/pesquisar", async (request, response) => {
 
 // para pesquisar por chave/valor (incompleto)
 
-app.get("/filmes/pesquisar", async (request, response) => {
+app.get("/filmes/buscar", async (request, response) => {
     try {
         
-        let geralRequest = request.query
-        let chave = Object.keys(geralRequest).toLowerCase()
-        let valor = Object.values(geralRequest).toLowerCase()
         let dbFilmes = await bancoDeDados()
-        dbFilmes = dbFilmes.filmes;
+        let filmesJson = dbFilmes.filmes
+        let parametros = request.query
 
-        for(i=0; i < dbFilmes.length; i++) {
-            let pesquisarPorChave = chave[i]
-            let pesquisarPorValor = valor[i]
-            console.log(pesquisarPorChave)
-            console.log(pesquisarPorValor)
-        }
-        // dbFilmes.filmes
-    
-        // let valor = Object.values(geralRequest)
-        // let chave = Object.keys(geralRequest)
-    
-        // for (let i = 0; i<chave.length;i++){
-        //     console.log(chave[i])
-        //     console.log(valor[i])
-        // }
+        //console.log(parametros)
+
+        const chaves = Object.keys(parametros)
+
+        //console.log(chaves)
+        
+        const filtrarFilmes = filmesJson.filter((filme) => {
+            return chaves.some(key => RegExp(parametros[key], 'i').test(filme[key].toString()));
+        })
+
+        if(filtrarFilmes.length == 0) throw new Error("Filme não encontrado")
+
+        response.status(200).send(filtrarFilmes)
+
     } catch (error) {
         response.status(404).json({message: error.message})
     }
 })
 
-
+// cadastrar novo filme
 app.post("/filmes/cadastrar", async (request, response) => {
 
     let bodyRequest = request.body
@@ -127,7 +124,7 @@ app.get("/series/pesquisar/:id", async (request, response) => {
         let pesquisarId = dbSeries.series.find(serie => serie.id == idRequest)
         console.log(pesquisarId)
 
-        if(pesquisarId == undefined) throw new Error("id da serie não encontrado")
+        if(pesquisarId == undefined) throw new Error("id da série não encontrado")
 
         response.status(200).send(pesquisarId)
 
@@ -144,7 +141,7 @@ app.get("/series/pesquisar", async (request, response) => {
         
         let pesquisarTitulo = dbSeries.series.filter((serie) => serie.title.toLowerCase().includes(tituloRequest))
 
-        if(pesquisarTitulo.length == 0) throw new Error("serie não encontrada")
+        if(pesquisarTitulo.length == 0) throw new Error("Série não encontrada")
 
         response.status(200).send(pesquisarTitulo)
     } catch (error) {
@@ -152,6 +149,34 @@ app.get("/series/pesquisar", async (request, response) => {
     }
 })
 
+// buscar series por chave/valor 
+app.get("/series/buscar", async (request, response) => {
+    try {
+        
+        let dbSeries = await bancoDeDados()
+        let seriesJson = dbSeries.series
+        let parametros = request.query
+
+        //console.log(parametros)
+
+        const chaves = Object.keys(parametros)
+
+        //console.log(chaves)
+        
+        const filtrarSeries = seriesJson.filter((serie) => {
+            return chaves.some(key => RegExp(parametros[key], 'i').test(serie[key].toString()));
+        })
+
+        if(filtrarSeries.length == 0) throw new Error("Série não encontrada")
+
+        response.status(200).send(filtrarSeries)
+
+    } catch (error) {
+        response.status(404).json({message: error.message})
+    }
+})
+
+// cadastrar nova série
 app.post("/series/cadastrar", async (request, response) => {
     let bodyRequest = request.body
     let dbSeries = await bancoDeDados()
@@ -173,7 +198,7 @@ app.post("/series/cadastrar", async (request, response) => {
     })
 })
 
-
+//iniciando o servidor com a porta 3030
 app.listen(3030, () => {
     console.log("Servidor funcionando corretamente")
 })
