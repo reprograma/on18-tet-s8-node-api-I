@@ -1,7 +1,7 @@
 {
-  "name": "servidor-em-aula-assincrono",
+  "name": "para-casa",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Reprogramaflix",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

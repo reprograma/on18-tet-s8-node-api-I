@@ -14,61 +14,59 @@ function bancoDeDados(){
 
 const express = require("express")
 const app = express()
-
-//parser do body em json
 app.use(express.json())
 
 
-app.get("/filmes", async (request, response)=>{
+app.get("/filmes", async (request, response) => {
     let dbFilmes = await bancoDeDados()
 
     response.status(200).send(dbFilmes.filmes)
 })
 
-app.get("/filmes/pesquisar/:id", async (request, response)=>{
+
+app.get("/filmes/procurar/:id", async (request, response) => {
 
     try {
         let idRequest = request.params.id
         let dbFilmes = await bancoDeDados()
-    
-        let filmeEncontrado = dbFilmes.filmes.find( filme => filme.id == idRequest)
+        let filmeEncontrado = dbFilmes.filmes.find(filme => filme.id ==  idRequest)
 
         if(filmeEncontrado == undefined) throw new Error("id não encontrado")
-
-        response.status(200).send(filmeEncontrado)
         
+        response.status(200).send(filmeEncontrado)
     } catch (error) {
         response.status(404).json({message: error.message})
     }
+
 })
 
-app.get("/filmes/pesquisar", async (request, response)=>{
-    try {
-        let dbFilmes = await bancoDeDados()
-        let tituloRequest = request.query.titulo.toLowerCase()
 
+app.get("/filmes/pesquisar", async(request, response)=> {
+    try {
+        let tituloRequest = request.query.titulo.toLowerCase()
+        let dbFilmes = await bancoDeDados()
         let encontrarPorTitulo = dbFilmes.filmes.filter(filme => filme.title.toLowerCase().includes(tituloRequest))
 
-        console.log(encontrarPorTitulo)
-
-        if(encontrarPorTitulo.length == 0) throw new Error("filme não encontrado")
-        
+        if(encontrarPorTitulo.length == 0) throw new Error("titulo não encontrado")
 
         response.status(200).send(encontrarPorTitulo)
+        
     } catch (error) {
-        response.status(404).json({message: error.message})
+        response.status(404).json({messagem:error.message})
+    //     response.status(404).send({messagem:error.message})
+    // }
     }
 })
 
-app.post("/filmes/cadastrar", async (request, response)=>{
+
+
+app.post("/filmes/cadastrar", async(request, response) => {
     let bodyRequest = request.body
     let dbFilmes = await bancoDeDados()
     let filmes = dbFilmes.filmes
 
-    console.log(filmes.length)
-
     let novoFilme = {
-        id:(filmes.length)+1,
+        id: (filmes.length)+1,
         title: bodyRequest.title,
         description: bodyRequest.description
     }
@@ -79,10 +77,8 @@ app.post("/filmes/cadastrar", async (request, response)=>{
         mensagem: "filme cadastrado com sucesso",
         novoFilme
     })
-
 })
 
-
-app.listen(1313, ()=>{
-    console.log("Tomem cuidado nas votações")
+app.listen(1313, ()=> {
+    console.log("Tomem cuidado com nas votações")
 })
