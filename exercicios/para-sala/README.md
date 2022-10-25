@@ -3,7 +3,7 @@
 ## como iniciar o seu servidor?
 
 * criar pasta para seu servidor
-* criar um arquivo server.js
+* criar um arquivo server.js // criar com server é uma boa prática
 * começa o servidor (`npm init -y`)
 * baixar as dependencias 
     * Express (`npm i express`)

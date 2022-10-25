@@ -7,11 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Profa Analu",
+  "author": "camila-alves",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
-  },
-  "devDependencies": {},
-  "keywords": []
+    "express": "^4.18.2"
+  }
 }
