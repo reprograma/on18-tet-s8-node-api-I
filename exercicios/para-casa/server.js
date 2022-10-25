@@ -10,9 +10,10 @@ function bancoDeDados() {
     })
 }
 
+const { request } = require("express");
 // prof, mesmo vendo a aula sincrona e revendo as aulas para fazer o exercício, eu sempre tento fazer sozinha para ver o que eu aprendi.
 // Achei esse exercício muito legal. 
-// o último de retornar por qualquer chave e valor, eu não consegui fazer. 
+// o último de retornar por qualquer chave e valor, eu não consegui fazer. Então fiz com a ajuda da resolução
 
 
 const express = require("express")
@@ -49,6 +50,56 @@ app.get("/filmes/procurar", async (request, response) => {
 
 
 
+// essa busca genérica foi feita com a ajuda da resolução. Deixei para fazer o try/catch junto também. 
+app.get("/filmes/buscar", async (request, response) => {
+    try {
+
+        let dbFilmes = await bancoDeDados()
+        let filmesJson = dbFilmes.filmes
+        let parametros = request.query
+
+
+        const chaves = Object.keys(parametros);
+
+        const filtrado = filmesJson.filter((filme) => {
+            return chaves.some(key => RegExp(parametros[key], 'i').test(filme[key].toString()));
+        });
+
+        if(filtrado.length == 0) throw new Error("Filme não encontrado")
+
+        response.status(200).send(filtrado)
+        
+    } catch (error) {
+        response.status(404).json({message: error.message})
+        
+    }
+    
+})
+
+
+//na primeira resolução, eu tinha intepretado o "criar a rota de criação de filmes e série" como o que já estavámos fazendo e não como uma rota para fazer o cadastro de novos filmes e series... Fiz para filmes e series e reenviei. 
+
+app.post("/filmes/cadastrar", async (request, response) =>{
+    let bodyRequest = request.body
+    let dbFilmes = await bancoDeDados()
+    let filmes = dbFilmes.filmes
+
+    const novoFilme = {
+        id: (filmes.length)+1,
+        title: bodyRequest.title,
+        description: bodyRequest.description
+    }
+
+    filmes.push(novoFilme) 
+
+    response.status(200).send({
+        message: "Filme cadastrado com sucesso",
+        novoFilme
+    })
+
+})
+
+
 app.get("/series", async (request, response)=> {
     const dadosSeries = await bancoDeDados()
     response.status(200).send(dadosSeries.series)
@@ -75,6 +126,56 @@ app.get("/series/procurar", async (request, response) => {
     response.status(200).send(serieEncontrada)
 
 })
+
+
+
+//Feito com a ajuda da resolução.
+app.get("/series/buscar", async (request, response)=> {
+    try {
+        let dbSeries = bancoDeDados()
+        let seriesJson = dbSeries.series
+        let parametros = request.query
+
+        const chaves = Object.key(parametros);
+
+        const filtrado = seriesJson.filter((serie) => {
+            return chaves.some(key => RegExp(parametros[key], 'i').test(serie[key].toString()));
+        })
+
+        if(filtrado.length == 0) throw new Error("Serie não encontrada")
+
+        response.status(200).send(filtrado)
+        
+    } catch (error) {
+        response.status(404).json({message: error.message})
+        
+    }
+
+
+})
+
+
+app.post("/series/cadastrar", async (request, response)=> {
+    let bodyRequest = request.body
+    let dbSeries = await bancoDeDados()
+    let series = dbSeries.series
+
+    const novaSerie = {
+        id: (series.length)+1,
+        title: bodyRequest.title,
+        description: bodyRequest.description
+    }
+
+    series.push(novaSerie)
+
+    response.status(200).send({
+        message: "Serie cadastrada com sucesso",
+        novaSerie
+    })
+
+})
+
+
 
 
 
