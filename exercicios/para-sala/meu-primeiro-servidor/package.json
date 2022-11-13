@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "meu-primeiro-servidor",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "JaneAndrade",
+  "license": "ISC",
+  "description": "meu primeiro servidor "
+}
