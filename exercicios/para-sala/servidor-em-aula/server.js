@@ -1,29 +1,28 @@
-const filmesJson = require(".data/ghibli.json")
+const filmesJson = require("./data/ghibli.json")
+
 const express = require("express")
 const app = express()
-app.use(expresse.json())
+
+app.use(express.json())
 
 app.get("/filmes", (request, response)=>{
     response.status(200).json({
         mensagem:"ta funcionando",
-    data:filmesJson    })
+    data: filmesJson    })
 })
 
-// app.listen(3030, ()=>{
-//     console.log("Alô, pepe moreno")
-// })
-
-app.get("/filmes/:id",(request, response)=>{
+app.get("/filmes/pesquisar/:id",(request, response)=>{
     let idRequest = request.params.id
-    let filmeEncontrado = filmesJson.find(filme => filme.id == idRequest)
+    console.log(idRequest)
+    let filmeEncontrado = filmesJson.filter(filme => filme.id == idRequest)
     response.status(200).send(filmeEncontrado)
-})
+}) 
 
 app.get("/filmes/pesquisar",(request, response)=>{
     
     let tituloRequest = request.query.titulo.toLowerCase()
     let filmeEncontrado = filmesJson.filter(filme => filme.title.toLowerCase().includes(tituloRequest))
-        
+    response.status(200).send(filmeEncontrado)    
     })
 
 app.post("/filmes/cadastrar", (request, response)=>{
