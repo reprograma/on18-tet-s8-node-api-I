@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "y": "^0.3.2"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "para-casa",
+  "description": "- Explicação do projeto: para os dois jsons (filmes e series) crie as rotas de retorno de todos os filmes, por id, por titulo e por qualquer chave/valor. Crie a rota de criação de filme e serie.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
