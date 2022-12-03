@@ -144,7 +144,7 @@ app.post("/series/cadastrar", async (request, response)=>{
 
 
 app.listen(7070, ()=>{
-    console.log("rodando, lindo e bonito")
+    console.log("deu certo isso que importa")
 })
   
   
