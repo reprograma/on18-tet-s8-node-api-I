@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 
 
-app.get("/filmes", (request, response)=>{
+app.get("/filmes", (request, response) => {
     response.status(200).json({
         mensagem: "ta funcionando",
         data: filmesJson
@@ -15,7 +15,7 @@ app.get("/filmes", (request, response)=>{
 })
 
 //get por Path Params
-app.get("/filmes/pesquisar/:id", (request, response)=>{
+app.get("/filmes/pesquisar/:id", (request, response) => {
     let idRequest = request.params.id
     let filmeEncontrado = filmesJson.find(filme => filme.id == idRequest)
 
@@ -23,7 +23,7 @@ app.get("/filmes/pesquisar/:id", (request, response)=>{
 })
 
 //get por Query Params
-app.get("/filmes/pesquisar", (request, response)=>{
+app.get("/filmes/pesquisar", (request, response) => {
     let tituloRequest = request.query.titulo.toLowerCase()
 
     let filmeEncontrado = filmesJson.filter(
@@ -31,14 +31,14 @@ app.get("/filmes/pesquisar", (request, response)=>{
 
     response.status(200).send(filmeEncontrado)
 
-    })
-    
-app.post("/filmes/cadastrar", (request, response)=>{
+})
+
+app.post("/filmes/cadastrar", (request, response) => {
     let bodyRequest = request.body
 
     let novoFilme = {
         id: bodyRequest.id,
-        title:bodyRequest.title,
+        title: bodyRequest.title,
         description: bodyRequest.description
     }
 
@@ -50,6 +50,7 @@ app.post("/filmes/cadastrar", (request, response)=>{
     })
 })
 
-app.listen(3030, ()=>{
+app.listen(3030, () => {
     console.log("Alô, Pepe moreno?")
 })
+//entendido
