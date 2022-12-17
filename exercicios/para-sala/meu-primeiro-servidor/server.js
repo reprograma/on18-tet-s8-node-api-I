@@ -1,27 +1,25 @@
-const filmesJson = request("./data/ghibli.json")
+console.log("nosso codigo aqui")
+//summon express
+const express = require("express")
 
-const express = require("express")  // chamando express no arquivo
+//start up express
+const app = express()
 
-const app = express()   //executando express 
+// set up GET route
+app.get("/", (request, response) =>{
+    //RESPONSE.STATUS(XXXX).JSON()
+    response.status(200).json(["Uhul JS"])
+ })
 
-
-
-app.get("/", (request , response) =>{
-    response.status(200).json(["Eu estou brocando com js"])
-
-})
-
-app.get("/oi",(request , response) =>{
+app.get("/oi", (request, response)=>{
     response.status(200).json([{
-        mensagem : "Esse é só o começo "
+        mensagem: "oi coisa linda"
     }])
-
 })
 
-// iniciando servidor 
-app.listen(8080 , () =>{
-    console.log("Meu primeiro desenvolvimento!")
-
+//start up server
+app.listen(8080, ()=>{
+    console.log("servidor OK!")
 })
 
 
